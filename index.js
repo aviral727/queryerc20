@@ -24,7 +24,7 @@ app.get("/get", async (req, res) => {
   }
 });
 
-app.get("/set/:value", async (req, res) => {
+app.post("/set/:value", async (req, res) => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   await provider.send("eth_requestAccounts", []);
   const signer = provider.getSigner();
